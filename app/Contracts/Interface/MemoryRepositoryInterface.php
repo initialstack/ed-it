@@ -2,19 +2,21 @@
 
 namespace App\Contracts\Interface;
 
+use App\Models\Interval;
+
 interface MemoryRepositoryInterface
 {
 	/**
      * Retrieves all stored intervals from memory.
      *
-     * @return array
+     * @return Interval[]
      */
     public function all(): array;
 
     /**
      * Saves a new interval to memory storage.
      *
-     * @param array $interval Interval data to persist
+     * @param Interval[] $interval
      */
     public function save(array $interval): void;
 }

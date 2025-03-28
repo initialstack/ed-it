@@ -10,8 +10,9 @@ abstract class IntervalRepositoryAbstract implements RepositoryIntervalInterface
      * Concrete repository instance for delegation.
      *
      * @var RepositoryIntervalInterface
+     * @phpstan-ignore-next-line
      */
-    private readonly RepositoryIntervalInterface $repository;
+    private RepositoryIntervalInterface $repository;
 
     /**
      * Initializes the repository with concrete implementation.

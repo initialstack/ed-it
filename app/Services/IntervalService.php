@@ -44,7 +44,7 @@ final class IntervalService
      * @param int $left
      * @param int $right
      * 
-     * @return array
+     * @return array<array{start: int, end: int}>
      */
     public function fetchIntervals(int $left, int $right): array
     {

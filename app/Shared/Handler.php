@@ -11,7 +11,7 @@ abstract class Handler
      *
      * @param GetIntervalsQuery $query
      * 
-     * @return array
+     * @return array<array{start: int, end: int}>
      */
     abstract protected function handle(GetIntervalsQuery $query): array;
 }

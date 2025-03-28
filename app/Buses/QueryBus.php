@@ -40,7 +40,7 @@ final class QueryBus implements QueryBusInterface
     /**
      * Registers command handlers for the Query Bus.
      *
-     * @param array $map
+     * @param array<string> $map
      * 
      * @return void
      */

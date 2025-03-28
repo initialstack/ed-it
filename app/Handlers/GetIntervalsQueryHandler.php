@@ -30,7 +30,7 @@ final class GetIntervalsQueryHandler extends Handler
      * 
      * @param GetIntervalsQuery $query
      * 
-     * @return array
+     * @return array<int, mixed>
      */
     public function handle(GetIntervalsQuery $query): array
     {

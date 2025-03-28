@@ -30,7 +30,7 @@ final class IntervalRepository implements RepositoryIntervalInterface
      * @param int $left
      * @param int $right
      *
-     * @return array
+     * @return array<int, mixed>
      */
     public function get(int $left, int $right): array
     {

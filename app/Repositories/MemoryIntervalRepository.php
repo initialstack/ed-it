@@ -9,14 +9,14 @@ final class MemoryIntervalRepository implements MemoryRepositoryInterface
     /**
      * Collection of memory intervals.
      *
-     * @var array
+     * @var array<int, mixed>
      */
     private array $collection;
 
     /**
      * Initialize with intervals.
      *
-     * @param array $intervals
+     * @param array<int, mixed> $intervals
      */
     public function __construct(array $intervals = [])
     {
@@ -26,7 +26,7 @@ final class MemoryIntervalRepository implements MemoryRepositoryInterface
     /**
      * Get all intervals.
      *
-     * @return array
+     * @return array<int, mixed>
      */
     public function all(): array
     {
@@ -36,7 +36,8 @@ final class MemoryIntervalRepository implements MemoryRepositoryInterface
     /**
      * Save a new interval.
      *
-     * @param array $interval
+     * @param array<string, mixed> $interval
+     * 
      * @return void
      */
     public function save(array $interval): void

@@ -12,7 +12,7 @@ final class QueryServiceProvider extends ServiceProvider
     /**
      * Mapping Of Queries To Their Handlers.
      * 
-     * @var array
+     * @var array<class-string, class-string>
      */
     private array $queries = [
         GetIntervalsQuery::class => GetIntervalsQueryHandler::class,
