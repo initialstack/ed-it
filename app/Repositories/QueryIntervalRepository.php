@@ -15,7 +15,7 @@ final class QueryIntervalRepository implements RepositoryIntervalInterface
      * @param int $left
      * @param int $right
      *
-     * @return array<array{start: int, end: int}>
+     * @return array<array{start: int, end: int|null}>
      */
 	public function get(int $left, int $right): array
     {
@@ -54,11 +54,11 @@ final class QueryIntervalRepository implements RepositoryIntervalInterface
             count: 100,
             callback: function (Collection $intervals) use (&$results): void {
                 foreach ($intervals as $interval) {
-                    $intervalArray = (array) $interval;
-                    
+                    $data = (array) $interval;
+
                     $results[] = [
-                        'start' => (int) $intervalArray['start'],
-                        'end' => (int) $intervalArray['end'],
+                        'start' => (int) $data['start'],
+                        'end' => isset($data['end']) ? (int) $data['end'] : null,
                     ];
                 }
             }
