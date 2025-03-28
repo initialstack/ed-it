@@ -45,8 +45,8 @@ final class IntervalListCommand extends Command
      */
     public function handle(): int
     {
-        $left = (int) $this->option(key: 'left');
-        $right = (int) $this->option(key: 'right');
+        $left = $this->option(key: 'left');
+        $right = $this->option(key: 'right');
 
         if ($left === null || $right === null) {
             $this->error(string: 'Both left and right boundaries must be provided.');
@@ -59,6 +59,9 @@ final class IntervalListCommand extends Command
 
             return 1;
         }
+
+        $left = (int) $left;
+        $right = (int) $right;
 
         if ($this->interval->validateBoundaries(left: $left, right: $right)) {
             $this->error(string: 'The left boundary must be less than or equal to the right.');
