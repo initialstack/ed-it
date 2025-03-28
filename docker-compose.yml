@@ -1,0 +1,51 @@
+x-environment: &environment
+  env_file:
+    - path: ./.env.example
+      required: true
+    - path: ./.env
+      required: false
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        USER_ID: ${USER_ID:-1000}
+        GROUP_ID: ${GROUP_ID:-1000}
+    dns:
+      - 1.1.1.1
+      - 1.0.0.1
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
+    networks:
+      - app-network
+
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_DB=${DB_DATABASE:-database}
+      - POSTGRES_USER=${DB_USERNAME:-user}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:-password}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  redis:
+    image: redis:alpine
+    restart: always
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
