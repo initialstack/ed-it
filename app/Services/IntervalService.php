@@ -2,11 +2,12 @@
 
 namespace App\Services;
 
+use App\Shared\Service;
 use App\Contracts\Interface\QueryBusInterface;
 use App\Queries\GetIntervalsQuery;
 use Illuminate\Support\Facades\DB;
 
-final class IntervalService
+final class IntervalService extends Service
 {
     /**
      * Query Bus for handling requests.
