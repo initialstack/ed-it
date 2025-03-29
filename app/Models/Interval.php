@@ -24,14 +24,14 @@ final class Interval extends Model
      *
      * @var int
      */
-    public int $start;
+    public private(set) int $start;
 
     /**
      * The end of the interval.
      *
      * @var int|null
      */
-    public ?int $end = null;
+    public private(set) ?int $end = null;
 
     /**
      * Initialize the Interval model.

@@ -55,12 +55,9 @@ final class IntervalRepository implements RepositoryIntervalInterface
     private function transformIntervalsToArray(array $intervals): array
     {
         return array_map(
-            callback: function (Interval $interval): array {
-                return [
-                    'start' => $interval->start,
-                    'end' => $interval->end,
-                ];
-            }, array: $intervals
+            callback: fn (Interval $interval): array
+                => ['start' => $interval->start, 'end' => $interval->end],
+            array: $intervals
         );
     }
 }
