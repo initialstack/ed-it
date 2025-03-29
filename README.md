@@ -67,3 +67,9 @@ docker compose exec app php artisan intervals:list --left=1 --right=1000
 <div align="center">
     <img src="https://raw.githubusercontent.com/a0xh/ed-it/refs/heads/main/public/images/test.png">
 </div>
+
+## Результат анализа
+
+<div align="center">
+    <img src="https://raw.githubusercontent.com/a0xh/ed-it/refs/heads/main/public/images/analyse.png">
+</div>
