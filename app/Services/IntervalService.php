@@ -7,7 +7,7 @@ use App\Contracts\Interface\QueryBusInterface;
 use App\Queries\GetIntervalsQuery;
 use Illuminate\Support\Facades\DB;
 
-final class IntervalService extends Service
+class IntervalService extends Service
 {
     /**
      * Query Bus for handling requests.
