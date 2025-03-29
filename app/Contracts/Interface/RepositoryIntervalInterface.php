@@ -4,11 +4,8 @@ namespace App\Contracts\Interface;
 
 interface RepositoryIntervalInterface
 {
-	/**
+    /**
      * Retrieves data within a specified interval.
-     *
-     * @param int $left
-     * @param int $right
      *
      * @return array<int, mixed>
      */

@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
 use App\Services\IntervalService;
+use Illuminate\Console\Command;
 
 final class IntervalListCommand extends Command
 {
@@ -23,15 +23,11 @@ final class IntervalListCommand extends Command
 
     /**
      * Interval Service For Handling Interval Operations.
-     *
-     * @var IntervalService
      */
     private readonly IntervalService $interval;
 
     /**
      * Initialize The Command With An Interval Service.
-     *
-     * @param IntervalService $interval
      */
     public function __construct(IntervalService $interval)
     {

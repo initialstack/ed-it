@@ -8,17 +8,13 @@ use Illuminate\Support\Facades\DB;
 
 final class IntervalService
 {
-	/**
+    /**
      * Query Bus for handling requests.
-     *
-     * @var QueryBusInterface
      */
     private readonly QueryBusInterface $queryBus;
 
     /**
      * Initialize service with Query Bus.
-     *
-     * @param QueryBusInterface $queryBus
      */
     public function __construct(QueryBusInterface $queryBus)
     {
@@ -27,11 +23,6 @@ final class IntervalService
 
     /**
      * Validate if left boundary <= right boundary.
-     *
-     * @param int $left
-     * @param int $right
-     * 
-     * @return bool
      */
     public function validateBoundaries(int $left, int $right): bool
     {
@@ -41,9 +32,6 @@ final class IntervalService
     /**
      * Get intervals between boundaries.
      *
-     * @param int $left
-     * @param int $right
-     * 
      * @return array<array{start: int, end: int}>
      */
     public function fetchIntervals(int $left, int $right): array
@@ -57,8 +45,6 @@ final class IntervalService
 
     /**
      * Log query performance or cache info.
-     *
-     * @return string
      */
     public function logQueryPerformance(): string
     {

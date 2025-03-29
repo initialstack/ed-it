@@ -6,18 +6,15 @@ use App\Contracts\Interface\RepositoryIntervalInterface;
 
 abstract class IntervalRepositoryAbstract implements RepositoryIntervalInterface
 {
-	/**
+    /**
      * Concrete repository instance for delegation.
      *
-     * @var RepositoryIntervalInterface
      * @phpstan-ignore-next-line
      */
     private RepositoryIntervalInterface $repository;
 
     /**
      * Initializes the repository with concrete implementation.
-     *
-     * @param RepositoryIntervalInterface $repository
      */
     protected function __construct(RepositoryIntervalInterface $repository)
     {

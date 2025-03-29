@@ -3,22 +3,18 @@
 namespace App\Buses;
 
 use App\Contracts\Interface\QueryBusInterface;
-use Illuminate\Bus\Dispatcher;
 use App\Shared\Query;
+use Illuminate\Bus\Dispatcher;
 
 final class QueryBus implements QueryBusInterface
 {
     /**
      * Query Bus Dispatcher instance.
-     *
-     * @var Dispatcher
      */
     private Dispatcher $queryBus;
 
     /**
      * Constructor to initialize Query Bus.
-     *
-     * @param Dispatcher $queryBus
      */
     public function __construct(Dispatcher $queryBus)
     {
@@ -27,10 +23,6 @@ final class QueryBus implements QueryBusInterface
 
     /**
      * Dispatches a query and returns the result.
-     *
-     * @param Query $query
-     * 
-     * @return mixed
      */
     public function ask(Query $query): mixed
     {
@@ -41,8 +33,6 @@ final class QueryBus implements QueryBusInterface
      * Registers command handlers for the Query Bus.
      *
      * @param array<string> $map
-     * 
-     * @return void
      */
     public function register(array $map): void
     {

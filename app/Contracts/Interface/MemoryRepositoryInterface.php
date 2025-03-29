@@ -6,7 +6,7 @@ use App\Models\Interval;
 
 interface MemoryRepositoryInterface
 {
-	/**
+    /**
      * Retrieves all stored intervals from memory.
      *
      * @return Interval[]

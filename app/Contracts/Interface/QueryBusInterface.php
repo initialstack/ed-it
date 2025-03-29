@@ -8,10 +8,6 @@ interface QueryBusInterface
 {
     /**
      * Executes a query and returns the result.
-     *
-     * @param Query $query
-     * 
-     * @return mixed
      */
     public function ask(Query $query): mixed;
 

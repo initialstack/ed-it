@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use App\Contracts\Interface\QueryBusInterface;
 use App\Buses\QueryBus;
+use App\Contracts\Interface\QueryBusInterface;
+use Illuminate\Support\ServiceProvider;
 
 final class BusServiceProvider extends ServiceProvider
 {

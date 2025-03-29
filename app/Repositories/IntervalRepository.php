@@ -8,15 +8,11 @@ final class IntervalRepository implements RepositoryIntervalInterface
 {
     /**
      * In-Memory Repository For Caching Intervals.
-     *
-     * @var MemoryIntervalRepository
      */
     private MemoryIntervalRepository $memoryRepository;
 
     /**
      * Initializes The Interval Repository With A Cached Repository.
-     *
-     * @param CachedIntervalRepository $intervalRepository
      */
     public function __construct(
         private readonly CachedIntervalRepository $intervalRepository
@@ -26,9 +22,6 @@ final class IntervalRepository implements RepositoryIntervalInterface
 
     /**
      * Retrieves Intervals Between The Specified Range.
-     *
-     * @param int $left
-     * @param int $right
      *
      * @return array<int, mixed>
      */

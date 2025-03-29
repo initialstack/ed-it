@@ -37,8 +37,6 @@ final class MemoryIntervalRepository implements MemoryRepositoryInterface
      * Save a new interval.
      *
      * @param array<string, mixed> $interval
-     * 
-     * @return void
      */
     public function save(array $interval): void
     {

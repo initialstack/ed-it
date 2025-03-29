@@ -9,8 +9,6 @@ abstract class Handler
     /**
      * Handles the given query and returns the result as an array.
      *
-     * @param GetIntervalsQuery $query
-     * 
      * @return array<array{start: int, end: int}>
      */
     abstract protected function handle(GetIntervalsQuery $query): array;

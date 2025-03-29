@@ -2,23 +2,19 @@
 
 namespace App\Handlers;
 
-use App\Shared\Handler;
 use App\Contracts\Interface\RepositoryIntervalInterface;
 use App\Queries\GetIntervalsQuery;
+use App\Shared\Handler;
 
 final class GetIntervalsQueryHandler extends Handler
 {
     /**
      * The interval repository instance.
-     * 
-     * @var RepositoryIntervalInterface
      */
     private readonly RepositoryIntervalInterface $intervalRepository;
 
     /**
      * Constructs the GetIntervalsQueryHandler.
-     *
-     * @param RepositoryIntervalInterface $intervalRepository
      */
     public function __construct(RepositoryIntervalInterface $intervalRepository)
     {
@@ -27,9 +23,7 @@ final class GetIntervalsQueryHandler extends Handler
 
     /**
      * Handles the GetIntervalsQuery.
-     * 
-     * @param GetIntervalsQuery $query
-     * 
+     *
      * @return array<int, mixed>
      */
     public function handle(GetIntervalsQuery $query): array

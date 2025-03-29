@@ -3,21 +3,18 @@
 namespace App\Repositories;
 
 use App\Contracts\Interface\RepositoryIntervalInterface;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 
 final class QueryIntervalRepository implements RepositoryIntervalInterface
 {
     /**
      * Retrieves Intervals That Overlap With The Specified Range.
      *
-     * @param int $left
-     * @param int $right
-     *
      * @return array<array{start: int, end: int|null}>
      */
-	public function get(int $left, int $right): array
+    public function get(int $left, int $right): array
     {
         $results = [];
 

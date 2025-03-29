@@ -2,16 +2,16 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use App\Contracts\Interface\QueryBusInterface;
-use App\Queries\GetIntervalsQuery;
 use App\Handlers\GetIntervalsQueryHandler;
+use App\Queries\GetIntervalsQuery;
+use Illuminate\Support\ServiceProvider;
 
 final class QueryServiceProvider extends ServiceProvider
 {
     /**
      * Mapping Of Queries To Their Handlers.
-     * 
+     *
      * @var array<class-string, class-string>
      */
     private array $queries = [

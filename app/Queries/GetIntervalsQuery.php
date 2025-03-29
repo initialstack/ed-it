@@ -8,9 +8,6 @@ final class GetIntervalsQuery extends Query
 {
     /**
      * The minimum and maximum value of the interval.
-     * 
-     * @param int $left
-     * @param int $right
      */
     public function __construct(
         private readonly int $left,
@@ -19,8 +16,6 @@ final class GetIntervalsQuery extends Query
 
     /**
      * Gets the minimum value of the interval.
-     * 
-     * @return int
      */
     public function getLeft(): int
     {
@@ -29,8 +24,6 @@ final class GetIntervalsQuery extends Query
 
     /**
      * Gets the maximum value of the interval.
-     * 
-     * @return int
      */
     public function getRight(): int
     {
