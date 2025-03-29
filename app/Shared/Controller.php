@@ -2,7 +2,4 @@
 
 namespace App\Shared;
 
-abstract class Controller
-{
-	//
-}
+abstract class Controller {}

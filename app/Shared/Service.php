@@ -2,7 +2,4 @@
 
 namespace App\Shared;
 
-abstract class Service
-{
-    //
-}
+abstract class Service {}

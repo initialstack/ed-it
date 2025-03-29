@@ -2,9 +2,9 @@
 
 namespace App\Services;
 
-use App\Shared\Service;
 use App\Contracts\Interface\QueryBusInterface;
 use App\Queries\GetIntervalsQuery;
+use App\Shared\Service;
 use Illuminate\Support\Facades\DB;
 
 class IntervalService extends Service
@@ -49,8 +49,6 @@ class IntervalService extends Service
 
     /**
      * Log query performance or cache info.
-     *
-     * @return string
      */
     public function logQueryPerformance(): string
     {

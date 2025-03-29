@@ -2,7 +2,4 @@
 
 namespace App\Shared;
 
-abstract class Query
-{
-    //
-}
+abstract class Query {}

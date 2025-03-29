@@ -49,13 +49,13 @@ final class IntervalRepository implements RepositoryIntervalInterface
      * Transforms an array of Interval objects into the expected array structure.
      *
      * @param array<Interval> $intervals
-     * 
+     *
      * @return array<array{start: int, end: int|null}>
      */
     private function transformIntervalsToArray(array $intervals): array
     {
         return array_map(
-            callback: fn (Interval $interval): array
+            callback: fn(Interval $interval): array
                 => ['start' => $interval->start, 'end' => $interval->end],
             array: $intervals
         );

@@ -2,7 +2,4 @@
 
 namespace App\Shared;
 
-abstract class Handler
-{
-    //
-}
+abstract class Handler {}

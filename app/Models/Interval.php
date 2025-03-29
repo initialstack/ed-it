@@ -21,17 +21,13 @@ final class Interval extends Model
 
     /**
      * The start of the interval.
-     *
-     * @var int
      */
-    public private(set) int $start;
+    public int $start;
 
     /**
      * The end of the interval.
-     *
-     * @var int|null
      */
-    public private(set) ?int $end = null;
+    public ?int $end = null;
 
     /**
      * Initialize the Interval model.
@@ -41,7 +37,7 @@ final class Interval extends Model
     public function __construct(array $attributes = [])
     {
         parent::__construct(attributes: $attributes);
-        
+
         $this->start = $this->validateAndCastInt(
             value: $attributes['start'] ?? 0,
             field: 'start'

@@ -11,11 +11,6 @@ final class QueryIntervalRepository implements RepositoryIntervalInterface
 {
     /**
      * Builds a query for overlapping intervals.
-     *
-     * @param int $left.
-     * @param int $right.
-     * 
-     * @return Builder
      */
     private function query(int $left, int $right): Builder
     {
@@ -53,9 +48,6 @@ final class QueryIntervalRepository implements RepositoryIntervalInterface
 
     /**
      * Retrieves Intervals That Overlap With The Specified Range.
-     *
-     * @param int $left.
-     * @param int $right.
      *
      * @return array<array{start: int, end: int|null}>
      */
