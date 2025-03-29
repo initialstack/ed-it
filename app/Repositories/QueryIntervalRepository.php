@@ -10,15 +10,16 @@ use Illuminate\Support\Facades\DB;
 final class QueryIntervalRepository implements RepositoryIntervalInterface
 {
     /**
-     * Retrieves Intervals That Overlap With The Specified Range.
+     * Builds a query for overlapping intervals.
      *
-     * @return array<array{start: int, end: int|null}>
+     * @param int $left.
+     * @param int $right.
+     * 
+     * @return Builder
      */
-    public function get(int $left, int $right): array
+    private function query(int $left, int $right): Builder
     {
-        $results = [];
-
-        DB::table(
+        return DB::table(
             table: 'intervals'
         )->select(
             columns: ['start', 'end']
@@ -47,7 +48,22 @@ final class QueryIntervalRepository implements RepositoryIntervalInterface
         )->orderBy(
             column: 'start',
             direction: 'asc'
-        )->chunk(
+        );
+    }
+
+    /**
+     * Retrieves Intervals That Overlap With The Specified Range.
+     *
+     * @param int $left.
+     * @param int $right.
+     *
+     * @return array<array{start: int, end: int|null}>
+     */
+    public function get(int $left, int $right): array
+    {
+        $results = [];
+
+        $this->query(left: $left, right: $right)->chunk(
             count: 100,
             callback: function (Collection $intervals) use (&$results): void {
                 foreach ($intervals as $interval) {
