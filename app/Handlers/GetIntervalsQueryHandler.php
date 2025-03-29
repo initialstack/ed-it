@@ -24,7 +24,7 @@ final class GetIntervalsQueryHandler extends Handler
     /**
      * Handles the GetIntervalsQuery.
      *
-     * @return array<array{start: int, end: int}>
+     * @return array<array{start: int, end: int|null}>
      */
     public function handle(GetIntervalsQuery $query): array
     {

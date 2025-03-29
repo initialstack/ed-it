@@ -30,7 +30,8 @@ final class CachedIntervalRepository implements RepositoryIntervalInterface
     {
         $cacheKey = "intervals_{$left}_{$right}";
 
-        return Cache::flexible(
+        /** @var array<array{start: int, end: int|null}> $result */
+        $result = Cache::flexible(
             key: $cacheKey,
             ttl: [
                 Carbon::now()->addMinutes(value: 5),
@@ -40,5 +41,7 @@ final class CachedIntervalRepository implements RepositoryIntervalInterface
                 return $this->intervalRepository->get(left: $left, right: $right);
             }
         );
+
+        return $result;
     }
 }

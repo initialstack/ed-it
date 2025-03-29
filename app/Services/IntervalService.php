@@ -38,9 +38,12 @@ final class IntervalService
     {
         DB::enableQueryLog();
 
-        return $this->queryBus->ask(
+        /** @var array<array{start: int, end: int}> $intervals */
+        $intervals = $this->queryBus->ask(
             query: new GetIntervalsQuery(left: $left, right: $right)
         );
+
+        return $intervals;
     }
 
     /**

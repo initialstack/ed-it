@@ -42,7 +42,29 @@ final class Interval extends Model
     {
         parent::__construct(attributes: $attributes);
         
-        $this->start = $attributes['start'] ?? 0;
-        $this->end = $attributes['end'] ?? null;
+        $this->start = $this->validateAndCastInt(
+            value: $attributes['start'] ?? 0,
+            field: 'start'
+        );
+
+        $this->end = isset($attributes['end'])
+            ? $this->validateAndCastInt(value: $attributes['end'], field: 'end')
+            : null;
+    }
+
+    /**
+     * Validate and cast a value to an integer.
+     *
+     * @throws \InvalidArgumentException If the value is not numeric.
+     */
+    private function validateAndCastInt(mixed $value, string $field): int
+    {
+        if (!is_numeric(value: $value)) {
+            throw new \InvalidArgumentException(
+                message: "The {$field} attribute must be numeric."
+            );
+        }
+
+        return (int) $value;
     }
 }
