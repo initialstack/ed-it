@@ -45,12 +45,14 @@ final class IntervalService
 
     /**
      * Log query performance or cache info.
+     *
+     * @return string
      */
     public function logQueryPerformance(): string
     {
         $queries = DB::getQueryLog();
 
-        if (!empty($queries)) {
+        if (count(value: $queries) > 0) {
             return 'Query executed in ' . $queries[0]['time'] . ' ms';
         }
 

@@ -9,14 +9,14 @@ interface MemoryRepositoryInterface
     /**
      * Retrieves all stored intervals from memory.
      *
-     * @return Interval[]
+     * @return array<Interval>
      */
     public function all(): array;
 
     /**
      * Saves a new interval to memory storage.
      *
-     * @param Interval[] $interval
+     * @param array<string, int|null> $interval
      */
     public function save(array $interval): void;
 }

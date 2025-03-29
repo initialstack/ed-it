@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Contracts\Interface\RepositoryIntervalInterface;
+use App\Models\Interval;
 
 final class IntervalRepository implements RepositoryIntervalInterface
 {
@@ -23,12 +24,14 @@ final class IntervalRepository implements RepositoryIntervalInterface
     /**
      * Retrieves Intervals Between The Specified Range.
      *
-     * @return array<int, mixed>
+     * @return array<array{start: int, end: int|null}>
      */
     public function get(int $left, int $right): array
     {
         if (count(value: $this->memoryRepository->all()) > 0) {
-            return $this->memoryRepository->all();
+            return $this->transformIntervalsToArray(
+                intervals: $this->memoryRepository->all()
+            );
         }
 
         $intervals = $this->intervalRepository->get(left: $left, right: $right);
@@ -37,6 +40,27 @@ final class IntervalRepository implements RepositoryIntervalInterface
             $this->memoryRepository->save(interval: $interval);
         }
 
-        return $this->memoryRepository->all();
+        return $this->transformIntervalsToArray(
+            intervals: $this->memoryRepository->all()
+        );
+    }
+
+    /**
+     * Transforms an array of Interval objects into the expected array structure.
+     *
+     * @param array<Interval> $intervals
+     * 
+     * @return array<array{start: int, end: int|null}>
+     */
+    private function transformIntervalsToArray(array $intervals): array
+    {
+        return array_map(
+            callback: function (Interval $interval): array {
+                return [
+                    'start' => $interval->start,
+                    'end' => $interval->end,
+                ];
+            }, array: $intervals
+        );
     }
 }

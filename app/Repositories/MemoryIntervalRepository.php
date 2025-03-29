@@ -3,30 +3,21 @@
 namespace App\Repositories;
 
 use App\Contracts\Interface\MemoryRepositoryInterface;
+use App\Models\Interval;
 
 final class MemoryIntervalRepository implements MemoryRepositoryInterface
 {
     /**
      * Collection of memory intervals.
      *
-     * @var array<int, mixed>
+     * @var array<Interval>
      */
-    private array $collection;
+    private array $collection = [];
 
     /**
-     * Initialize with intervals.
+     * Retrieves all stored intervals from memory.
      *
-     * @param array<int, mixed> $intervals
-     */
-    public function __construct(array $intervals = [])
-    {
-        $this->collection = $intervals;
-    }
-
-    /**
-     * Get all intervals.
-     *
-     * @return array<int, mixed>
+     * @return array<Interval>
      */
     public function all(): array
     {
@@ -34,12 +25,13 @@ final class MemoryIntervalRepository implements MemoryRepositoryInterface
     }
 
     /**
-     * Save a new interval.
+     * Save a new interval to memory storage.
      *
-     * @param array<string, mixed> $interval
+     * @param array<string, int|null> $interval
      */
     public function save(array $interval): void
     {
-        $this->collection[] = $interval;
+        $intervalModel = new Interval(attributes: $interval);
+        $this->collection[] = $intervalModel;
     }
 }

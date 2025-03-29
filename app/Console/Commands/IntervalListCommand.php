@@ -17,7 +17,7 @@ final class IntervalListCommand extends Command
     /**
      * The console command description.
      *
-     * @var string
+     * @var string|null
      */
     protected $description = 'Displays a list of intervals within the specified boundaries';
 

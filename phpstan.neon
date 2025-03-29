@@ -1,6 +1,12 @@
 includes:
-  - vendor/larastan/larastan/extension.neon
+  - phar://phpstan.phar/conf/bleedingEdge.neon
+  - vendor/phpstan/phpstan-strict-rules/rules.neon
+
 parameters:
+  level: 7
+  fileExtensions:
+    - php
   paths:
     - app/
-  level: 7
+  tmpDir: storage/framework/cache/phpstan
+  reportUnmatchedIgnoredErrors: true

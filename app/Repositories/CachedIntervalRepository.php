@@ -24,7 +24,7 @@ final class CachedIntervalRepository implements RepositoryIntervalInterface
     /**
      * Retrieve Interval Data From Cache Or Query Repository.
      *
-     * @return array<int, mixed>
+     * @return array<array{start: int, end: int|null}>
      */
     public function get(int $left, int $right): array
     {

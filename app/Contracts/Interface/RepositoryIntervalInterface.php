@@ -7,7 +7,7 @@ interface RepositoryIntervalInterface
     /**
      * Retrieves data within a specified interval.
      *
-     * @return array<int, mixed>
+     * @return array<array{start: int, end: int|null}>
      */
     public function get(int $left, int $right): array;
 }
