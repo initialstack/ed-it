@@ -22,12 +22,12 @@ final class IntervalListCommand extends Command
     protected $description = 'Displays a list of intervals within the specified boundaries';
 
     /**
-     * Interval Service For Handling Interval Operations.
+     * Interval service for handling interval operations.
      */
     private readonly IntervalService $interval;
 
     /**
-     * Initialize The Command With An Interval Service.
+     * Initialize the command with an interval service.
      */
     public function __construct(IntervalService $interval)
     {

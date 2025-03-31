@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Contracts\Interface\RepositoryIntervalInterface;
+use App\Contracts\Interface\IntervalRepositoryInterface;
 use App\Repositories\IntervalRepository;
 use Illuminate\Support\ServiceProvider;
 
@@ -14,7 +14,7 @@ final class RepositoryServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(
-            abstract: RepositoryIntervalInterface::class,
+            abstract: IntervalRepositoryInterface::class,
             concrete: IntervalRepository::class
         );
     }

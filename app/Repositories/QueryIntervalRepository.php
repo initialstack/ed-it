@@ -2,12 +2,12 @@
 
 namespace App\Repositories;
 
-use App\Contracts\Interface\RepositoryIntervalInterface;
+use App\Contracts\Interface\IntervalRepositoryInterface;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
-final class QueryIntervalRepository implements RepositoryIntervalInterface
+final class QueryIntervalRepository implements IntervalRepositoryInterface
 {
     /**
      * Builds a query for overlapping intervals.

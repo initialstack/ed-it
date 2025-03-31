@@ -2,11 +2,11 @@
 
 namespace App\Repositories;
 
-use App\Contracts\Interface\RepositoryIntervalInterface;
+use App\Contracts\Interface\IntervalRepositoryInterface;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
 
-final class CachedIntervalRepository implements RepositoryIntervalInterface
+final class CachedIntervalRepository implements IntervalRepositoryInterface
 {
     /**
      * Underlying Query Repository.

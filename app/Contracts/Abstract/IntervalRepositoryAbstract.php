@@ -2,21 +2,21 @@
 
 namespace App\Contracts\Abstract;
 
-use App\Contracts\Interface\RepositoryIntervalInterface;
+use App\Contracts\Interface\IntervalRepositoryInterface;
 
-abstract class IntervalRepositoryAbstract implements RepositoryIntervalInterface
+abstract class IntervalRepositoryAbstract implements IntervalRepositoryInterface
 {
     /**
      * Concrete repository instance for delegation.
      *
      * @phpstan-ignore-next-line
      */
-    private RepositoryIntervalInterface $repository;
+    private IntervalRepositoryInterface $repository;
 
     /**
      * Initializes the repository with concrete implementation.
      */
-    protected function __construct(RepositoryIntervalInterface $repository)
+    protected function __construct(IntervalRepositoryInterface $repository)
     {
         $this->repository = $repository;
     }

@@ -2,7 +2,7 @@
 
 namespace App\Contracts\Interface;
 
-interface RepositoryIntervalInterface
+interface IntervalRepositoryInterface
 {
     /**
      * Retrieves data within a specified interval.

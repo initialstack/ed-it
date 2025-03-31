@@ -2,10 +2,10 @@
 
 namespace App\Repositories;
 
-use App\Contracts\Interface\RepositoryIntervalInterface;
+use App\Contracts\Interface\IntervalRepositoryInterface;
 use App\Models\Interval;
 
-final class IntervalRepository implements RepositoryIntervalInterface
+final class IntervalRepository implements IntervalRepositoryInterface
 {
     /**
      * In-Memory Repository For Caching Intervals.
